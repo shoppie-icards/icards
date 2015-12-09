@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Prefix http://host/merchant
+Route::group(['prefix'=>'/merchant'], function(){
+
+	Route::get('/', function () {
+    return view('merchant/index');
+	});
+	Route::get('initialize-card' , 'InitializeCardController@index');
+});
