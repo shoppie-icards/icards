@@ -45,10 +45,10 @@
     </div>
     -->
             <div class="form-group">
-                <input class="form-control required" type="text" id="" name="" placeholder="Họ và tên" value="">
+                <input class="form-control required" type="text" id="" name="fullname" placeholder="Họ và tên" value="">
             </div>
             <div class="form-group">
-                <input class="form-control required" type="text" id="" name="" placeholder="Vai trò" value="">
+                <input class="form-control required" type="text" id="" name="role" placeholder="Vai trò" value="">
             </div>
 
             <div class="form-group">
@@ -85,24 +85,24 @@
             </div>
 
             <div class="form-group">
-                <input class="form-control required" type="text" id="role" name="role" placeholder="Vai trò" value="">
+                <input class="form-control required" type="text" id="address" name="address" placeholder="Địa chỉ" value="">
             </div>
 
             <div class="form-group">
-                <input class="form-control required" type="text" id="" name="" placeholder="" value="">
+                <input class="form-control required" type="text" id="district" name="district" placeholder="Quận/Huyện" value="">
             </div>
 
             <div class="form-group">
-                <input class="form-control required" type="text" id="" name="" placeholder="" value="">
+                <input class="form-control required" type="text" id="province" name="province" placeholder="Tỉnh/Thành" value="">
             </div>
             <div class="form-group">
-                <input class="form-control required" type="text" id="" name="" placeholder="" value="">
+                <input class="form-control required" type="text" id="country" name="country" placeholder="Quốc Gia" value="">
             </div>
             <div class="form-group">
-                <input class="form-control required" type="text" id="" name="" placeholder="" value="">
+                <input class="form-control required" type="text" id="phone" name="phone" placeholder="Số điện thoại" value="">
             </div>
             <div class="form-group">
-                <input class="form-control required" type="text" id="" name="" placeholder="" value="">
+                <input class="form-control required" type="text" id="email" name="email" placeholder="Email" value="">
             </div>
         </div>
     </div>
@@ -687,12 +687,74 @@
             element.before(error);
         },
         rules: {
-
+            trademark: {
+                required: {
+                    depends:function(){
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    }
+                }
+            },
+            feild: {
+                required: true,
+            },
+            fullname: {
+                required: true,
+            },
+            role: {
+                required: true,
+            },
+            address: {
+                required: true,
+            },
+            district: {
+                required: true,
+            },
+            province: {
+                required: true,
+            },
+            country: {
+                required: true,
+            },
+            phone: {
+                required: true,
+            },
+            email: {
+                required: true,
+            }
         },
         messages: {
-            trademark: "(*) Vui lòng nhập tên thương hiệu",
-            feild: "(*) Vui lòng nhập tên lĩnh vực",
-        },
+            trademark:{
+                required: "(*) Vui lòng nhập tên thương hiệu",
+            },
+            feild: {
+                required: "(*) Vui lòng nhập tên lĩnh vực",
+            },
+            fullname: {
+                required: "(*) Vui lòng nhập họ tên",
+            },
+            role: {
+                required: "(*) Vui lòng nhập vai trò",
+            },
+            address: {
+                required: "(*) Vui lòng nhập địa chỉ",
+            },
+            district: {
+                required: "(*) Vui lòng nhập quận/huyện",
+            },
+            province: {
+                required: "(*) Vui lòng nhập họ tên",
+            },
+            country: {
+                required: "(*) Vui lòng nhập quốc gia",
+            },
+            phone: {
+                required: "(*) Vui lòng nhập số điện thoại",
+            },
+            email: {
+                required: "(*) Vui lòng nhập email",
+            }
+        }
     });
 </script>
 @stop
