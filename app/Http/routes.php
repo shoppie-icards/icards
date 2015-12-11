@@ -18,6 +18,12 @@ Route::get('/', function () {
 });
 
 
+
+Route::get('merchant-login' , 'UsersController@index');
+
+// Check Authenticate manage
+Route::get('manage' , 'ManageController@index');
+
 //Prefix http://host/merchant
 Route::group(['prefix'=>'/merchant'], function(){
 

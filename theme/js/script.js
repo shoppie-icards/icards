@@ -292,6 +292,27 @@ $(document).ready(function(){
 
 
 
+	//Check value id-account
+	$('#id-account').keyup(function () {
+	    var checkValueSearchId = $(this).val();
+	    if (checkValueSearchId == "") {
+	    	$('.box-trackby-lv').hide(500, 'swing');
+	    } else {
+	    	$('.box-trackby-lv').show(500, 'swing');
+	    }
+	});
+
+
+
+	//Show checked select user
+	$('.box-trackby-lv').click(function() {
+		$('.box-trackby-lv').toggleClass('border-color-pink');
+		$("#show-checked-user").toggleClass('checked-user');
+		$('.button-add-point-track-by-id').toggleClass('show-box-add-point');
+	});
+
+
+
 	// <script type="text/javascript">
  //            $(document).ready(function(){
  //            $('[data-toggle="popover"]').popover();   

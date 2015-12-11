@@ -118,7 +118,7 @@
 
 
 <!-- Steep 2 -->
-<h3>Tạo hạng thẻ</h3>
+<h3>Tạo hạng thẻ &nbsp;&nbsp;&nbsp;&nbsp; </h3>
 <fieldset class="create-brand">
     <p class="step-title">Bước 2: Tại đây vui lòng thiết lập hình thức thẻ thành viên cho thương hiệu của bạn</p>
     <div class="row">
@@ -388,7 +388,7 @@
                                     </td>
                                     <td style="position:relative">
                                         <p class="value-default">điểm</p>
-                                        <input type="text" name="point" id="" class="form-control point" value="0">
+                                        <input type="text" name="point" id="" class="form-control point" value="">
                                     </td>
                                     <td style="position:relative">
                                         <p class="value-default">%</p>
@@ -590,7 +590,7 @@
 
 
 <!-- step 3 -->
-<h3>Tạo địa chỉ shop</h3>
+<h3>Tạo địa chỉ shop &nbsp;&nbsp;</h3>
 <fieldset class="create-brand">
     <p class="step-title">Bước 3: Tạo địa chỉ cửa hàng và tài khoản đăng nhập của mỗi cửa hàng. Bạn có thể thay đổi nó về sau</p>
     <div class="col-lg-12">
@@ -656,7 +656,7 @@
 <!-- end step 3 -->
 
 <!-- steep 4 -->
-<h3>Xác nhận</h3>
+<h3>Xác nhận &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
 <fieldset class="create-brand">
     <p class="step-title">Bước 4: Chúng tôi đang xử lý yêu cầu của bạn. Vui lòng kiểm tra lại thông tin liên hệ 1 lần nữa!</p>
     <div class="col-lg-6">

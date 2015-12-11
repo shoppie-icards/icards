@@ -51,7 +51,6 @@
             		<div class="form-group has-feedback has-feedback-left">
             			<i class="form-control-feedback glyphicon glyphicon-search" style="float:left"></i>
     					<input type="text" class="form-control" placeholder="Tìm kiếm" />
-    					
   					</div>
             	</div>
 

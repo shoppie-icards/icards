@@ -35,8 +35,8 @@
                 </div>
                 <div class="col-sm-5 nav-action">
                     <ul>
-                        <li>Logout</li>
-                        <li>Gói miễn phí</li>
+                        <li>Logout <a href="#"><i class="fa fa-share-square-o fa-lg"></i></a></li>
+                        <li>Gói miễn phí <a href="#" class="upgrade-premium"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
                     </ul>
                 </div>
             </div>

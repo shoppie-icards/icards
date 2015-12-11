@@ -16,12 +16,7 @@ html, body {
   min-width: 360px;
 }
 
-* {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
+
 
  body {
     font-family: 'Open Sans', sans-serif;
@@ -56,10 +51,13 @@ html, body {
     color: #f94876;
  }
  a:hover {
-    color: #000000;
+    color: #f94876;
  }
  .pink {
     color: #f94876;
+ }
+ .border-color-pink {
+    border:solid 1px #f94876 !important;
  }
  .gray {
     color: #bebfc0;
@@ -820,6 +818,58 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
     text-align: left;
 }
 
+/*Manage*/
+.manage-icards {
+    padding: 10px;
+}
+.manage-icards h1 {
+    text-transform: uppercase;
+    font-size: 14px;
+    color:#f94876;
+    font-weight: bold;
+    border-bottom: solid 1px #f94876;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.list-track-by-account .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #ffc8d6;
+}
+.list-track-by-account .table-striped>tbody>tr {
+    background-color: #f1f2f3;
+}
+
+.box-trackby-lv {
+    background: #f1f2f3;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.box-trackby-lv:hover {
+    border:solid 1px #f94876;
+}
+
+
+.button-add-point-track-by-id .value-default {
+    top:7px;
+}
+.button-add-point-track-by-id .note {
+    float: right;
+}
+
+.position-checked-search {
+    display: none;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+.checked-user {
+    display: block !important;
+}
+.show-box-add-point {
+    display: none;
+}
 
 
 
@@ -886,6 +936,9 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
 }
 
 @media only screen and (max-width: 768px) {
+    body {
+        overflow-x:hidden;
+    }
     .container-fluid {
         padding: 5px 0px;
     }
