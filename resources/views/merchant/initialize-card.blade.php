@@ -3,10 +3,15 @@
 <link href="{{ URL('/theme') }}/css/jquery.steps.css" rel="stylesheet">
 @stop
 
+@section('title')
+    <div class="title-pages">
+        <h2>Khởi tạo thẻ</h2>
+    </div>
+@stop
+
 @section('content')
+
 <form id="example-advanced-form" action="#">
-
-
 <!-- step 1 -->
 <h3>Tạo thương hiệu</h3>
 <fieldset class="create-brand">
@@ -23,15 +28,15 @@
                 <input class="form-control required" type="text" id="feild" name="feild" placeholder="Lĩnh vực" value="">
             </div>
             <div class="form-group">
-                <div class="row" style="margin:0px;">
-                    <div class="col-md-6 label-logo" style="padding-left:0px;">
-                        <label for="" class="form-label-custome">Logo (300px x 300px) <span style="color:red;">*</span>
-                        </label>
-                    </div>
-                    <div class="col-md-6 contentImage">
-                        <div class="img-logo" style="padding-top:45px;">+</div>
-                    </div>
-                    <input type="file" name="logo" value="{{Input::old('logo')}}" id="logo" class="upload-img" />
+                <div class="row">
+                    <center>
+                        <div class="col-md-12 contentImage">
+                            <div class="img-logo">
+                                <p class="position-text-avatar">Add logo <br> 300 x 300px</p>
+                            </div>
+                        </div>
+                        <input type="file" name="logo" value="{{Input::old('logo')}}" id="logo" class="upload-img" />
+                    </center>
                 </div>
             </div>
         </div>
@@ -60,7 +65,7 @@
                                 @for ($i = 1; $i <= 31 ; $i++) { 
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
-                            ?>
+
 
                         </select>
                     </span>
@@ -123,9 +128,9 @@
             <hr>
             <p class="note-option no-margin">Vui lòng chọn 1 trong 2 loại thẻ bên dưới:</p>
             <ul class="select-type">
-                <li class="type-chops"><span></span><a href="#">Loại thẻ Stamples/Chops </a><a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa button"><i class="fa fa-info-circle pink"></i></a>
+                <li class="type-chops"><span></span><a href="#">Loại thẻ Stamples/Chops </a><a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa button"><i class="fa fa-info-circle pink"></i></a>
                 </li>
-                <li class="type-levels"><span class="current1"></span><a href="#">Loại thẻ Levels </a><a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                <li class="type-levels"><span class="current1"></span><a href="#">Loại thẻ Levels </a><a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                 </li>
             </ul>
             <ul class="select-type type-levels-option">
@@ -143,17 +148,187 @@
                 <hr>
                 <ul class="select-type">
                     <!-- SELECT OPTION CHOPS -->
-                    <li class="select-chop-option-1"><span class="current1"></span><a href="#">Tặng miễn phí 1 sản phẩm sau khi tích lũy đủ 1 lượng Stamples/Chops </a><a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa button"><i class="fa fa-info-circle pink"></i></a>
+                    <li class="select-chop-option-1"><span class="current1"></span><a href="#">Tặng miễn phí 1 sản phẩm sau khi tích lũy đủ 1 lượng Stamples/Chops </a><a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa button"><i class="fa fa-info-circle pink"></i></a>
                     </li>
-                    <li class="select-chop-option-2"><span></span><a href="#">Giảm giá % trên tổng hóa đơn sau khi tích lũy đủ 1 lượng Stamples/Chops </a><a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                    <li class="select-chop-option-2"><span></span><a href="#">Giảm giá % trên tổng hóa đơn sau khi tích lũy đủ 1 lượng Stamples/Chops </a><a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                     </li>
                 </ul>
-                <p>----------------------------</p>
+                <hr class="line-dotted">
                 <div class="chops-option-gift-1">
-                    Option gift 1
+                    <div class="table-responsive" style="overflow-y: hidden; ">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:33%">Số lượng chops cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    </th>
+                                    <th style="width:33%">Miễn phí 1 sản phẩm <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    </th>
+                                    <th style="width:33%"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="customize-input-point">
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <select class="form-control choice-stick">
+                                                <option value="0">Chọn mức</option>
+
+                                                @for ($i = 1; $i <= 15 ; $i++) { 
+                                                    <option value="{{ $i }}">{{ $i }}</option>
+                                                @endfor
+
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td style="position:relative">
+                                        <p class="value-default">đ</p>
+                                        <input type="text" name="point" id="" class="form-control point" value="50.000">
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <input type="button" name="" id="" class="form-control btn btn-pink" value="Tạo">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        5
+                                    </td>
+                                    <td>
+                                        50.000 đ
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <i class="fa fa-pencil fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash fa-lg pink"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        10
+                                    </td>
+                                    <td>
+                                        100.000 đ
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <i class="fa fa-pencil fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash fa-lg pink"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        15
+                                    </td>
+                                    <td>
+                                        200.000 đ
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <i class="fa fa-pencil fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash fa-lg pink"></i>
+                                    </td>
+                                </tr>
+
+
+                                
+                            </tbody>
+                        </table>
+                        <p>Giá trị thanh toán tương đương của 1 chops <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a></p>
+                        <div style="position:relative;">
+                            <div class="col-md-4">
+                                <p class="value-default" style="top:7px;right:25px;">đ</p>
+                            <input type="text" name="point" id="" class="form-control point" value="50.000">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="chops-option-gift-2" style="display:none">
-                    Option gift 2
+                    <div class="table-responsive" style="overflow-y: hidden; ">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:33%">Số lượng chops cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    </th>
+                                    <th style="width:33%">% giảm giá cho lần mua tiếp <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    </th>
+                                    <th style="width:33%"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="customize-input-point">
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option>Chọn mức</option>
+
+                                                @for ($i = 1; $i <= 15 ; $i++) { 
+                                                    <option value="{{ $i }}">{{ $i }}</option>
+                                                @endfor
+
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td style="position:relative">
+                                        <p class="value-default">%</p>
+                                        <input type="text" name="point" id="" class="form-control point" value="5">
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <input type="button" name="" id="" class="form-control btn btn-pink" value="Tạo">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        10 %
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <i class="fa fa-pencil fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash fa-lg pink"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        6
+                                    </td>
+                                    <td>
+                                        20 %
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <i class="fa fa-pencil fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash fa-lg pink"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        9
+                                    </td>
+                                    <td>
+                                        50 %
+                                    </td>
+
+                                    <td style="position:relative">
+                                        <i class="fa fa-pencil fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash fa-lg pink"></i>
+                                    </td>
+                                </tr>
+
+
+                                
+                            </tbody>
+                        </table>
+                        <p>Giá trị thanh toán tương đương của 1 chops <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a></p>
+                        <div style="position:relative;">
+                            <div class="col-md-4">
+                                <p class="value-default" style="top:7px;right:25px;">đ</p>
+                            <input type="text" name="point" id="" class="form-control point" value="50.000">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="content-level">
@@ -165,13 +340,13 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th style="width:23%">Hạng thẻ <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th style="width:23%">Hạng thẻ <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
-                                    <th>Cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th>Cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
-                                    <th>% điểm thưởng <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th>% điểm thưởng <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
-                                    <th></th>
+                                    <th style="width:20%"></th>
                                 </tr>
                             </thead>
                             <tbody class="customize-input-point">
@@ -187,7 +362,7 @@
                                         <p class="value-default">%</p>
                                         <input type="text" name="" id="" class="form-control" value="15">
                                     </td>
-                                    <td style="position:relative">
+                                    <td>
                                         <input type="button" name="" id="" class="form-control btn btn-pink" value="Tạo">
                                     </td>
                                 </tr>
@@ -203,7 +378,7 @@
                                         <p class="value-default">%</p>
                                         <input type="text" name="" id="" class="form-control" value="10">
                                     </td>
-                                    <td style="position:relative">
+                                    <td>
                                         <input type="button" name="" id="" class="form-control btn btn-pink" value="Tạo">
                                     </td>
                                 </tr>
@@ -219,7 +394,7 @@
                                         <p class="value-default">%</p>
                                         <input type="text" name="" id="" class="form-control" value="5">
                                     </td>
-                                    <td style="position:relative">
+                                    <td style="padding-left:0px;">
                                         <i class="fa fa-pencil fa-lg"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash fa-lg pink"></i>
                                     </td>
                                 </tr>
@@ -233,11 +408,11 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th style="width:23%">Hạng thẻ <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th style="width:23%">Hạng thẻ <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
-                                    <th>Cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th>Cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
-                                    <th>% điểm thưởng <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th>% điểm thưởng <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
                                     <th></th>
                                 </tr>
@@ -301,11 +476,11 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th style="width:23%">Hạng thẻ <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th style="width:23%">Hạng thẻ <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
-                                    <th>Cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th>Cần tích lũy <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
-                                    <th>% điểm thưởng <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                    <th>% điểm thưởng <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                     </th>
                                     <th></th>
                                 </tr>
@@ -351,7 +526,7 @@
             <!-- END content For chops -->
         </div>
         <!-- RIGHT -->
-        <div class="col-lg-6">
+        <div class="col-lg-6 status-display">
             <h1 class="pink">Demo trên ứng dụng của thành viên</h1>
             <hr>
             <!-- Demo mobile  -->
@@ -421,15 +596,15 @@
     <div class="col-lg-12">
         <h1 class="pink">Tạo mới địa chỉ Store/Merchant</h1>
         <hr>
-        <div class="col-lg-10 col-sm-offset-1">
+        <div class="col-lg-12">
             <div class="create-shop-address">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Tên cửa hàng <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                <th>Tên cửa hàng <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                 </th>
-                                <th>Địa chỉ <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                <th>Địa chỉ <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                 </th>
                                 <th></th>
                             </tr>
@@ -437,10 +612,10 @@
                         <tbody class="customize-input-point">
                             <tr>
                                 <td>
-                                    <input type="text" name="point" id="name-shop" class="form-control point" placeholder="Nhập tên cửa hàng">
+                                    <input type="text" style="padding-right: 10px;" name="point" id="name-shop" class="form-control point" placeholder="Nhập tên cửa hàng">
                                 </td>
                                 <td>
-                                    <input type="text" name="point" id="address-shop" class="form-control point" placeholder="Nhập địa chỉ">
+                                    <input type="text" style="padding-right: 10px;" name="point" id="address-shop" class="form-control point" placeholder="Nhập địa chỉ">
                                 </td>
                                 <td style="position:relative">
                                     <input type="button" name="" id="button-create-store-address" class="form-control btn btn-pink" value="Tạo">
@@ -460,11 +635,11 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Tài khoản shop <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                <th>Tài khoản shop <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                 </th>
-                                <th>Tên đăng nhập <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                <th>Tên đăng nhập <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                 </th>
-                                <th>Mật khẩu <a href="#" data-toggle="popover" data-trigger="hover" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
+                                <th>Mật khẩu <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Nội dung giải thích ý nghĩa tích điểm theo LV"><i class="fa fa-info-circle pink"></i></a>
                                 </th>
                                 <th></th>
                             </tr>
@@ -648,9 +823,9 @@
         transitionEffect: "slideLeft",
         onStepChanging: function(event, currentIndex, newIndex) {
             // Allways allow previous action even if the current form is not valid!
-            // return true;
+            return true;
             if (currentIndex > newIndex) {
-                return true;
+                // return true;
             }
             // Forbid next action on "Warning" step if the user is to young
             if (newIndex === 3 && Number($("#age-2").val()) < 18) {

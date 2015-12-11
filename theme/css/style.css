@@ -12,6 +12,17 @@
  */
 
  /* Global */
+html, body {
+  min-width: 360px;
+}
+
+* {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
  body {
     font-family: 'Open Sans', sans-serif;
     background: #f1f2f3;
@@ -29,20 +40,23 @@
  .no-margin {
     margin: 0px !important;
  }
-
-
- h1,h2,h3,h4,h5,h6 {
-    font-family: 'Source Sans Pro', sans-serif;
+ .center {
+    text-align: center;
  }
+
+.title-h1 {
+    font-size: 18px;
+    border-bottom: solid 1px #bebfc0;
+    padding-bottom: 10px;
+    color:#f94876;
+}
+
+
  a {
     color: #f94876;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
  }
  a:hover {
-    color: #ffffff;
+    color: #000000;
  }
  .pink {
     color: #f94876;
@@ -50,6 +64,11 @@
  .gray {
     color: #bebfc0;
  }
+.popover {
+    font-size: 12px;
+}
+
+ /*END*/
 
 
  #wrapper {
@@ -107,7 +126,7 @@ box-shadow: 8px 8px 12px 0px rgba(85,85,85,0.5);
 }
 
 #wrapper.toggled #page-content-wrapper {
-    position: relative;
+    /*position: relative;*/
     margin-right: 0px; 
 }
 .fixed-brand{
@@ -282,7 +301,7 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
     margin: 5px 0px;
 }
 .coppy-right h2 {
-    font-size: 13px;
+    font-size: 12px;
     margin: 10px;
 }
 .coppy-right img {
@@ -365,13 +384,14 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
     height: 150px;
     border: 1px solid #ddd;
     border-radius: 50%;
-    text-align: left;
-    font-size: 35px;
+    font-size: 16px;
     text-align: center;
     color: #808080;
     cursor: pointer;
-    float: right;
-    margin-right: 50px;
+}
+.position-text-avatar {
+    text-align: center;
+    margin-top: 50px;
 }
 .form-label-custome {
     color:#9197a3;
@@ -407,6 +427,9 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
 }
 .current1 {
     background-color: #f94876;
+}
+.demo-mobile-content {
+    min-height: 6   00px;
 }
 .demo-chops-card {
     background-color: #f1f2f3;
@@ -455,21 +478,21 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
 }
 
 .tick-star-1, .tick-star-2, .tick-star-3 {
-    padding-top: 8px;
+    padding-top: 12px;
     padding-right: 12px;
     padding-left: 27px;
 }
 
 .tick-star-1 span, .tick-star-2 span, .tick-star-3 span {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     padding-top: 3px;
     border-radius: 50%;
     background-color: #fff;
     display: inline-block;
-    margin-left: 11px;
-    margin-bottom: 9px;
+    margin-left: 20px;
+    margin-bottom: 20px;
     color: #f94876;
     float: left;
 }
@@ -541,6 +564,9 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
 }
 .customize-input-point input[type=text] {
     padding-right: 47px;
+}
+.line-dotted {
+    border-top:1px dotted #9197a3;
 }
 
 /*Address shop*/
@@ -623,8 +649,176 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
 .table-packages table .packages-first span{
     color:#f94876;
     margin-bottom: 30px;
- }
+}
 
+
+/*Send messages*/
+.messages-container {
+    color: #000000;
+    font-size: 14px;
+}
+.text-messages {
+    width: 180px;
+    text-align: left;
+    font-size: 10px;
+    color:#ffffff;
+    margin-top: -145px;
+    padding-bottom: 130px;
+}
+
+.list-send-messages tr th {
+    text-align: center;
+}
+
+.messages-container .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #ffc8d6;
+}
+.messages-container .table-striped>tbody>tr {
+    background-color: #f1f2f3;
+}
+
+/*Incentives*/
+.info-incentives label {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    color: #494949;
+}
+
+.upload-avartar, .upload-content {
+    visibility: hidden;
+}
+
+.info-incentives .img-avatar {
+    width: 100%;
+}
+.showImagesAvatar {
+    border-radius: 10px;
+}
+.img-content-avatar {
+    width: 100%;
+}
+.info-incentives .img-avatar:focus {
+    outline: none;
+    box-shadow: none;
+    color:#fff;
+}
+.info-incentives .list-image-incentives-avatar, .list-image-incentives-content {
+    list-style: none;
+    font-size: 16px;
+}
+.info-incentives .list-image-incentives-avatar,.list-image-incentives-content i {
+    cursor: pointer;
+}
+.btn-create-incentives {
+    width: 100%;
+}
+.list-incentives span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.incentives-container .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #ffc8d6;
+}
+.incentives-container .table-striped>tbody>tr {
+    background-color: #f1f2f3;
+}
+
+.position-counter {
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    color: #f94876;
+    right: 10px;
+    bottom: -10px;
+    font-style: italic;
+    font-size: 12px;
+}
+.title-demo-incentives {
+    color: #ffffff;
+    position: absolute;
+    left: 50px;
+    top: 82px;
+    font-weight: bold;
+}
+.title-demo-incentives-2 {
+    color: #f94876;
+    position: absolute;
+    left: 35px;
+    top: 335px;
+}
+
+.content-demo-incentives {
+    color: #9197a3;
+    font-size: 10px;
+    position: absolute;
+    left: 45px;
+    line-height: 12px;
+    width: 200px;
+    text-align: left;
+    top: 352px;
+}
+.fixDemoMobile {
+    display: block;
+    margin: auto;
+    width: 280px;
+}
+
+
+
+
+/*Feedback*/
+.clear-rating, .caption  {
+    display: none !important;
+}
+.rate-start-feedback h2 {
+    color:#f94876;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.rate-lg {
+    font-size: 40px !important;
+    font-weight: bold;
+}
+.list-feedback {
+    margin-top: 50px;
+}
+
+.feedback-container .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #ffc8d6;
+}
+.feedback-container .table-striped>tbody>tr {
+    background-color: #f1f2f3;
+}
+
+/*Account manage*/
+
+.account-manage-container .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #ffc8d6;
+}
+.account-manage-container .table-striped>tbody>tr {
+    background-color: #f1f2f3;
+}
+
+
+/*Detail account*/
+.avatar-detail {
+    float: left;
+}
+.detail-account span {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.detail-account tr td {
+    margin: 10px 0px;
+}
+.info-user-details tr td {
+    text-align: left;
+}
 
 
 
@@ -692,6 +886,29 @@ box-shadow: 4px 4px 6px 0px rgba(85,85,85,0.5);
 }
 
 @media only screen and (max-width: 768px) {
+    .container-fluid {
+        padding: 5px 0px;
+    }
+
+    /*Messages*/
+    .status-display {
+        display: none;
+    }
+    .list-send-messages tr th {
+        font-size: 12px;
+    }
+
+    .list-send-messages tr td {
+        font-size: 10px;
+    }
+
+    /*Incentives*/
+    .list-incentives span {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+
     .title-pages {
         padding-left: 10px;
     }

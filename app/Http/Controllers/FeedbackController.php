@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use View;
 use Route;
+use View;
 
-class MerchantController extends Controller
+class FeedbackController extends Controller
 {
     public function __construct(){
-        $titlePage = 'Admin Panel';
+        $titlePage = 'Quản trị phản hồi';
         $className = substr(__CLASS__,21);
         $actionName = substr(strrchr(Route::currentRouteAction(),"@"),1);
         View::share(array(
@@ -31,7 +31,7 @@ class MerchantController extends Controller
      */
     public function index()
     {
-        return view('merchant.index');
+        return view('merchant.feedback');
     }
 
     /**

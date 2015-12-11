@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -19,8 +21,18 @@ Route::get('/', function () {
 //Prefix http://host/merchant
 Route::group(['prefix'=>'/merchant'], function(){
 
-	Route::get('/', function () {
-    return view('merchant/index');
-	});
+	Route::get('/' , 'MerchantController@index');
+	
 	Route::get('initialize-card' , 'InitializeCardController@index');
+
+	Route::get('send-messages' , 'MessagesController@index');
+
+	Route::get('create-incentives' , 'IncentivesController@index');
+
+	Route::get('feedback' , 'FeedbackController@index');
+
+	Route::get('account-manage' , 'AccountManageController@index');
+	Route::get('detail' , 'AccountManageController@memberDetail');
+
+	Route::get('analytics' , 'AnalyticsController@index');
 });

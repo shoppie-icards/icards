@@ -42,20 +42,7 @@
             </div>
         </div>
         <hr>
-        <div class="title-pages">
-            <h2>Khởi tạo thẻ</h2>
-            <!-- Customize -->
-            <div class="wizard-progress">
-                <!-- <ul class="winzard">
-                        <li class="active"><span>1</span>Step 1</li>
-                        <li class="active"><span>2</span>Step 1</li>
-                        <li class="active"><span>3</span>Step 1</li>
-                        <li class="active"><span>4</span>Step 1</li>
-                        <li>Step 1</li>
-                        </ul> -->
-            </div>
-            <!-- end customize -->
-        </div>
+        @yield('title')
         <!-- bs-example-navbar-collapse-1 -->
     </nav>
     <div id="wrapper">

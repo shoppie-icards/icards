@@ -6,9 +6,25 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Route;
+use View;
 
 class InitializeCardController extends Controller
 {
+    public function __construct(){
+        $titlePage = 'Admin Panel';
+        $className = substr(__CLASS__,21);
+        $actionName = substr(strrchr(Route::currentRouteAction(),"@"),1);
+        View::share(array(
+            'titlePage' => $titlePage,
+            'className' => $className,
+            'actionName' => $actionName,
+        ));
+        $this->afterFilter(function() {
+
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *

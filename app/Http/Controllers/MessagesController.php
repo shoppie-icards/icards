@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use View;
 use Route;
 
-class MerchantController extends Controller
+class MessagesController extends Controller
 {
     public function __construct(){
         $titlePage = 'Admin Panel';
@@ -31,7 +31,7 @@ class MerchantController extends Controller
      */
     public function index()
     {
-        return view('merchant.index');
+        return view('merchant.messages');
     }
 
     /**

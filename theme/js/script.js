@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
 	$('.img-logo').click(function(){
 		$('.upload-img').trigger('click');
 	});
@@ -13,6 +15,23 @@ $(document).ready(function(){
 	    };
 	    reader.readAsDataURL(event.target.files[0]);
 	});
+
+
+	$('.img-avatar').click(function(){
+		$('.upload-avartar').trigger('click');
+	});
+	$( ".upload-avartar" ).change(function( event ) {
+		var reader = new FileReader();
+	    reader.onload = function(e){
+	      	$( "div.showImagesAvatar" ).empty();
+	      	$( "div.showImagesAvatar" ).append( "<img class=\"img-content-avatar\" src=\"" + e.target.result + "\"/>" );
+	      	$('.img-avatar').click(function(){
+				$('.upload-avartar').trigger('click');
+			});
+	    };
+	    reader.readAsDataURL(event.target.files[0]);
+	});
+
 
 	// $('#birthday').datepicker();
 
@@ -29,7 +48,7 @@ $(document).ready(function(){
 	// 	}
 	// });
 
-	// $(".chop-number input").keyup(function(){
+	// $(".chop-number option").onChange(function(){
 	// 	var numbTick = $(this).val();
 	// 	// alert(numbTick);
 	// 	// console.log(numbTick);
@@ -47,6 +66,8 @@ $(document).ready(function(){
 	// 		}
 	// 	}
 	// });
+
+
 
 
 	$(".type-chops").click(function(e){
@@ -121,11 +142,10 @@ $(document).ready(function(){
 		$(".chops-option-gift-1").show();
 		$(".chops-option-gift-2").hide();
 
-		// $(".typel-level-option-2").hide();
-		// $(".typel-level-option-3").hide();
+
 		$( ".select-chop-option-1 span" ).addClass("current1");
 		$( ".select-chop-option-2 span" ).removeClass("current1");
-		// $( ".type-levels-3 span" ).removeClass("current1");
+
 
 	});
 
@@ -214,6 +234,62 @@ $(document).ready(function(){
 			$('.table-packages').show( "slow" );
 		}
 	});
+
+	$('#content-message').keyup(function () {
+    	$('.text-messages').text($(this).val());
+    });
+
+	$('#titleIncentives').keyup(function () {
+    	$('.title-demo-incentives, .title-demo-incentives-2').text($(this).val());
+    });
+
+	$('#contentIncentives').keyup(function () {
+    	$('.content-demo-incentives').text($(this).val());
+    });
+
+
+	//Add star to Card
+
+	$('.choice-stick').on('change', function(e) {
+		e.preventDefault();
+		var numbTick = $(this).val();
+		if(numbTick > 0) {
+
+			for(var i = 1; i <= numbTick; i++){
+				$(".tick-"+i).html("<i class='fa fa-star fa-2x'></i>");
+			}
+
+			for(var j = parseInt(numbTick)+1; j <= 15; j++){
+				$(".demo-back-chops-card span.tick-"+j).html("");
+			}
+
+		} else {
+			for(var i = 1; i <= 15; i++){
+				$(".demo-back-chops-card span.tick-"+i).html("");
+			}
+		}
+		
+	});
+
+
+	// Counter input
+
+	$('#titleIncentives').keyup(function () {
+	    var left = 60 - $(this).val().length;
+	    if ( left <= 0 ) {
+	    	alert('Tên chương trình quá dài');
+	    };
+	    $('#counter-title').text(left + '/60');
+	});
+
+	$('#contentIncentives').keyup(function () {
+	    var left = 140 - $(this).val().length;
+	    if ( left <= 0 ) {
+	    	alert('Nội dung chương trình quá dài');
+	    };
+	    $('#counter-content').text(left + '/140');
+	});
+
 
 
 	// <script type="text/javascript">
