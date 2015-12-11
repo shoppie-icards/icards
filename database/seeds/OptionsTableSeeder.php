@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Options as Options;
 class OptionsTableSeeder extends Seeder
 {
     /**
@@ -12,202 +12,202 @@ class OptionsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('options')->truncate();
-		Options::create(array(
+        DB::table('options::class)')->truncate();
+		factory(App\Options::class)::create(array(
 			'name'     => 'Lĩnh vực',
 		));
 		
 		//thinh thanh pho
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hà Nội',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'TP. Hồ Chí Minh',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'An Giang',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bà Rịa Vũng Tàu',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bắc Giang',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bắc Kạn',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bạc Liêu',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bắc Ninh',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bến Tre',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bình Dương',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bình Phước',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bình Thuận',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Bình Định',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Cà Mau',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Cần Thơ',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Cao Bằng',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Ðà Nẵng',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Ðắc Lắc',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Ðắk Nông',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Ðồng Nai',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Ðồng Tháp',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Ðiện Biên',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Gia Lai',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hà Giang',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hà Nam',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hà Tây',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hà Tĩnh',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hải Dương',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hải Phòng',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hậu Giang',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hoà Bình',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Huế',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Hưng Yên',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Khánh Hoà',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Kiên Giang',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Kon Tum',
 		));
-		Options::create(array(
+		factory(App\factory(App\Options::class)::class)::create(array(
 			'name'     => 'Lai Châu',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Lâm Ðồng',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Lạng Sơn',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Lào Cai',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Long An',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Nam Ðịnh',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Nghệ An',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Ninh Bình',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Ninh Thuận',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Phú Thọ',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Phú Yên',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Quảng Bình',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Quảng Nam',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Quảng Ngãi',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Quảng Ninh',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Quảng Trị',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Sóc Trăng',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Sơn La',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Tây Ninh',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Thái Bình',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Thái Nguyên',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Thanh Hóa',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Tiền Giang',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Trà Vinh',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Tuyên Quang',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Vĩnh Long',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Vĩnh Phúc',
 		));
-		Options::create(array(
+		factory(App\Options::class)::create(array(
 			'name'     => 'Yên Bái',
 		));
     }
