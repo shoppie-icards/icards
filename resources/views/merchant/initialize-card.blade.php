@@ -823,9 +823,9 @@
         transitionEffect: "slideLeft",
         onStepChanging: function(event, currentIndex, newIndex) {
             // Allways allow previous action even if the current form is not valid!
-            return true;
+            //return true;
             if (currentIndex > newIndex) {
-                // return true;
+                return true;
             }
             // Forbid next action on "Warning" step if the user is to young
             if (newIndex === 3 && Number($("#age-2").val()) < 18) {
