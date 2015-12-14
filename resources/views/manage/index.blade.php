@@ -27,7 +27,7 @@
                         <thead>
                         <tr>
                             <th class="pink" style="width:10">Ảnh</th>
-                            <th class="pink status-display" style="width:15%">Tên KH</th>
+                            <th class="pink" style="width:15%">Tên KH</th>
                             <th class="pink" style="width:20%">Vàng</th>
                             <th class="pink" style="width:20%">Điểm</th>
                         </tr>
@@ -89,7 +89,7 @@
                 <thead>
                 <tr>
                     <th class="pink" style="width:10">Ngày</th>
-                    <th class="pink status-display" style="width:15%">ID khách hàng</th>
+                    <th class="pink" style="width:15%">ID khách hàng</th>
                     <th class="pink" style="width:20%">Tên KH</th>
                     <th class="pink" style="width:20%">Hình thức GD</th>
                     <th class="pink" style="width:20%">Giá trị</th>
