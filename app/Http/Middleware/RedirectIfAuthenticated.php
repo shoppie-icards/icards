@@ -35,7 +35,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            if (Auth::user()->type == 1) {
+            if (Auth::user()->type == 3) {
                 return redirect('/merchant');
             } elseif (Auth::user()->type == 2) {
                 return redirect('/manage');

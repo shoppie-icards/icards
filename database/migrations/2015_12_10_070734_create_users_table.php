@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('active')->default(1);
             $table->string('accept_token')->nullable();
             $table->string('remember_token')->nullable();
-            $table->integer('type')->default(3);  // 1 la admin, 2 la merchant, 3 la user
+            $table->integer('type')->default(3);  // 1 la admin, 2 manage, 3 merchant, 4 la user
             $table->integer('status')->default(1);
             $table->timestamps();
         });

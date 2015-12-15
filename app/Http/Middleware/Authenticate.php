@@ -41,7 +41,7 @@ class Authenticate
             } else {
                 return redirect()->guest('merchant-login');
             }
-        } elseif (Auth::user()->type != 1) {
+        } elseif (Auth::user()->type != 3) {
             return redirect('/');
         }
 

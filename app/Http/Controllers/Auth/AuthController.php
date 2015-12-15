@@ -158,7 +158,7 @@ class AuthController extends Controller
     public function postLogin(Request $request) {
         $credentials = $request->only('email','password');
         if(Auth::attempt( $credentials, true ) ) {
-            if (Auth::user()->active == 1 && Auth::user()->type == 1) {
+            if (Auth::user()->active == 1 && Auth::user()->type == 3) {
                 return redirect('merchant');
             } elseif(Auth::user()->active == 1 && Auth::user()->type == 2){
                 return redirect('manage');
@@ -179,6 +179,6 @@ class AuthController extends Controller
 
     public function getLogout() {
         Auth::logout();
-        echo "Logout done !";
+        return redirect('merchant-login')->withSuccess('Đăng xuất tài khoản thành công');
     }
 }
