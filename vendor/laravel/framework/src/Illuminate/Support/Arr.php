@@ -181,9 +181,7 @@ class Arr
     {
         $return = [];
 
-        array_walk_recursive($array, function ($x) use (&$return) {
-            $return[] = $x;
-        });
+        array_walk_recursive($array, function ($x) use (&$return) { $return[] = $x; });
 
         return $return;
     }

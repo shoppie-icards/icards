@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Auth;
 
 class Authenticate
 {
@@ -39,10 +38,8 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('merchant-login');
+                return redirect()->guest('auth/login');
             }
-        } elseif (Auth::user()->type != 1) {
-            return redirect('/');
         }
 
         return $next($request);

@@ -104,9 +104,7 @@ class Collection extends BaseCollection
      */
     public function modelKeys()
     {
-        return array_map(function ($m) {
-            return $m->getKey();
-        }, $this->items);
+        return array_map(function ($m) { return $m->getKey(); }, $this->items);
     }
 
     /**
