@@ -59,11 +59,11 @@
 <body>
     <div class="container">
         <h1>iCards</h1>
-        <h4>Hi Tuyen,</h4>
+        <h4>Hi {{ $username }},</h4>
         <p>Chúng tôi nhận được thông báo tạo tài khoản quản trị chương trình thẻ thành viên iCards qua địa chỉ Email này, vui lòng xác nhận bằng cách click vào nút xác nhận bên dưới</p>
         <p class="note">Nếu không phải bạn. Vui lòng bỏ qua tin nhắn này.</p>
         <center>
-            <a href="#"><button type="button" class="btn btn-pink">Xác nhận Email</button></a>
+            <a href="{{ $link }}"><button type="button" class="btn btn-pink">Xác nhận Email</button></a>
         </center>
         <br>
         <p>Chân thành cảm ơn,<br>The iCards Team</p>

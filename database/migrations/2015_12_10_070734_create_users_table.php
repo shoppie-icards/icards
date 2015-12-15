@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('user_name')->unique(); // luu sdt doi voi user 
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('token_active');
             $table->string('password_confirmation')->nullable();
             $table->integer('active')->default(1);
             $table->string('accept_token')->nullable();

@@ -19,26 +19,37 @@ Route::get('/', function () {
 
 
 
-Route::get('merchant-login' , 'UsersController@index');
+Route::get('merchant-login' , 'Auth\AuthController@getLogin');
+Route::post('auth/login' , 'Auth\AuthController@postLogin');
+Route::get('logout' , 'Auth\AuthController@getLogout');
+
+
+Route::get('register' , 'Auth\AuthController@getRegister');
+Route::post('register' , 'Auth\AuthController@postRegister');
+
+Route::get('active/{token}' , 'Auth\AuthController@activeAccount');
+
 
 // Check Authenticate manage
 Route::get('manage' , 'ManageController@index');
 
 //Prefix http://host/merchant
-Route::group(['prefix'=>'/merchant'], function(){
+Route::group(['middleware'=>'auth'], function(){
+	Route::group(['prefix'=>'/merchant'], function(){
 
-	Route::get('/' , 'MerchantController@index');
-	
-	Route::get('initialize-card' , 'InitializeCardController@index');
+		Route::get('/' , 'MerchantController@index');
+		
+		Route::get('initialize-card' , 'InitializeCardController@index');
 
-	Route::get('send-messages' , 'MessagesController@index');
+		Route::get('send-messages' , 'MessagesController@index');
 
-	Route::get('create-incentives' , 'IncentivesController@index');
+		Route::get('create-incentives' , 'IncentivesController@index');
 
-	Route::get('feedback' , 'FeedbackController@index');
+		Route::get('feedback' , 'FeedbackController@index');
 
-	Route::get('account-manage' , 'AccountManageController@index');
-	Route::get('detail' , 'AccountManageController@memberDetail');
+		Route::get('account-manage' , 'AccountManageController@index');
+		Route::get('detail' , 'AccountManageController@memberDetail');
 
-	Route::get('analytics' , 'AnalyticsController@index');
+		Route::get('analytics' , 'AnalyticsController@index');
+	});
 });

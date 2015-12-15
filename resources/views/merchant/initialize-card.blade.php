@@ -863,12 +863,7 @@
         },
         rules: {
             trademark: {
-                required: {
-                    depends:function(){
-                        $(this).val($.trim($(this).val()));
-                        return true;
-                    }
-                }
+                required: true,
             },
             feild: {
                 required: true,
