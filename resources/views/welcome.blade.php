@@ -1,6 +1,3 @@
-<?php
-//var_dump(Auth::user());
-?>
 <!DOCTYPE html>
 <html>
     <head>

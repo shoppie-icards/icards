@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Auth;
+
 class RedirectIfAuthenticated
 {
     /**
@@ -35,13 +35,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            if (Auth::user()->type == 1) {
-                return redirect('/merchant');
-            } elseif (Auth::user()->type == 2) {
-                return redirect('/manage');
-            } else {
-                return redirect('/');
-            }
+            return redirect('/home');
         }
 
         return $next($request);
