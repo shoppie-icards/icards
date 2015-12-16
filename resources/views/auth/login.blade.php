@@ -35,7 +35,7 @@
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label class="sr-only" for="form-username">Tài khoản</label>
-                                        <input type="text" name="email" value="{{ old('email') }}" placeholder="Tên tài khoản ..." class="form-username form-control" id="form-username">
+                                        <input type="text" name="email" value="{{ old('email') }}" placeholder="Địa chỉ Email ..." class="form-username form-control" id="form-username">
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-password">Mật khẩu</label>

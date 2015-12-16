@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -65,6 +66,7 @@
     <script src="{{ URL('/theme') }}/js/jquery-1.11.2.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
     <script src="{{ URL('/theme') }}/js/bootstrap.min.js"></script>
+    <script src="{{ URL('/theme') }}/assets/toaster/jquery.toaster.js"></script>
     <script src="{{ URL('/theme') }}/js/sidebar_menu.js"></script>
     <script src="{{ URL('/theme') }}/js/script.js"></script>
     <!-- Customize include js -->

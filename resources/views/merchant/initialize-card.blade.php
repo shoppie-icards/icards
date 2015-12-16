@@ -11,6 +11,7 @@
 
 @section('content')
 
+
 <form id="example-advanced-form" action="#">
 <!-- step 1 -->
 <h3>Tạo thương hiệu</h3>
@@ -22,11 +23,23 @@
             <h1 class="pink">Thông tin thương hiệu</h1>
             <hr>
             <div class="form-group">
-                <input class="form-control required" type="text" id="trademark" name="trademark" placeholder="Tên thương hiệu" value="">
+                <input class="form-control required" type="text" id="trademark" name="trademark" placeholder="Tên thương hiệu" value="<?php if (isset($infoMerchants->name)) { echo $infoMerchants->name; } ?>">
             </div>
+
             <div class="form-group">
-                <input class="form-control required" type="text" id="feild" name="feild" placeholder="Lĩnh vực" value="">
+                <select class="form-control required" id="feild" name="feild">
+                    <option value="Giải trí">Cafe</option>
+                    <option value="Giải trí">Quán ăn</option>
+                    <option value="Khác">Khác</option>
+                    
+                </select>
             </div>
+
+            <!-- <div class="form-group">
+                <input class="form-control required" type="text" id="feild" name="feild" placeholder="Lĩnh vực" value="">
+            </div> -->
+
+
             <div class="form-group">
                 <div class="row">
                     <center>
@@ -90,24 +103,24 @@
             </div>
 
             <div class="form-group">
-                <input class="form-control required" type="text" id="address" name="address" placeholder="Địa chỉ" value="">
+                <input class="form-control required" type="text" id="address" name="address" placeholder="Địa chỉ" value="1">
             </div>
 
             <div class="form-group">
-                <input class="form-control required" type="text" id="district" name="district" placeholder="Quận/Huyện" value="">
+                <input class="form-control required" type="text" id="district" name="district" placeholder="Quận/Huyện" value="2">
             </div>
 
             <div class="form-group">
-                <input class="form-control required" type="text" id="province" name="province" placeholder="Tỉnh/Thành" value="">
+                <input class="form-control required" type="text" id="province" name="province" placeholder="Tỉnh/Thành" value="3">
             </div>
             <div class="form-group">
-                <input class="form-control required" type="text" id="country" name="country" placeholder="Quốc Gia" value="">
+                <input class="form-control required" type="text" id="country" name="country" placeholder="Quốc Gia" value="4">
             </div>
             <div class="form-group">
-                <input class="form-control required" type="text" id="phone" name="phone" placeholder="Số điện thoại" value="">
+                <input class="form-control required" type="text" id="phone" name="phone" placeholder="Số điện thoại" value="5">
             </div>
             <div class="form-group">
-                <input class="form-control required" type="text" id="email" name="email" placeholder="Email" value="">
+                <input class="form-control required" type="text" id="email" name="email" placeholder="Email" value="6">
             </div>
         </div>
     </div>
@@ -822,15 +835,20 @@
         bodyTag: "fieldset",
         transitionEffect: "slideLeft",
         onStepChanging: function(event, currentIndex, newIndex) {
+            console.log('onStepChanging' + currentIndex + newIndex);
             // Allways allow previous action even if the current form is not valid!
             //return true;
+
             if (currentIndex > newIndex) {
+                console.log('save steep 1');
                 return true;
             }
-            // Forbid next action on "Warning" step if the user is to young
-            if (newIndex === 3 && Number($("#age-2").val()) < 18) {
-                return false;
-            }
+            // // Forbid next action on "Warning" step if the user is to young
+            // if (newIndex === 3 && Number($("#age-2").val()) < 18) {
+            //     console.log('save step 3');
+            //     return false;
+                
+            // }
             // Needed in some cases if the user went back (clean up)
             if (currentIndex < newIndex) {
                 // To remove error styles
@@ -838,24 +856,89 @@
                 form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
             }
             form.validate().settings.ignore = ":disabled,:hidden";
-            return form.valid();
+
+            // return true;
+            
+            if ( form.valid() ) {
+                if ( currentIndex === 0 ) {
+                    console.log('save step 1');
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+                        }
+                    });
+
+                    // $.ajax(function() {
+                    //     url: 'create-merchant',
+                    //     method: 'POST',
+                    //     data : {
+                    //         trademark: $("input[name='trademark']").val()
+                    //     },
+                    //     success: function(data) {
+
+                    //     },
+                    //     error: function () {},
+                    // });
+
+                    $.ajax({
+                        url: 'create-merchant',
+                        method:'post',
+                        data : {
+                            trademark: $("input[name='trademark']").val(),
+                            feild: $("select[name='feild']").val(),
+                        },
+                        success: function(data){
+                            $.toaster({ priority : data.priority, message : data.messages });
+                            console.log(data.messages);
+                        },
+                        error: function(){},
+                    });
+
+                    if ( 1 ) {
+                        return true;
+                    }
+                    return false;
+
+                } else if( currentIndex === 1 ){
+                    console.log('save step 2');
+                    if ( 1 ) {
+                        return true;
+                    }
+                    return false;
+                } else if( currentIndex === 2 ){
+                    console.log('save step 3');
+                    if ( 1 ) {
+                        return true;
+                    }
+                    return false;
+                    
+                }
+            }
+            //return true;
+
         },
         onStepChanged: function(event, currentIndex, priorIndex) {
+            console.log('onStepChanged');
             // Used to skip the "Warning" step if the user is old enough.
             if (currentIndex === 2 && Number($("#age-2").val()) >= 18) {
-                form.steps("next");
+                // form.steps("next");
+                console.log('2222');
             }
             // Used to skip the "Warning" step if the user is old enough and wants to the previous step.
             if (currentIndex === 2 && priorIndex === 3) {
-                form.steps("previous");
+                // form.steps("previous");
+                console.log('3333');
             }
         },
         onFinishing: function(event, currentIndex) {
-            form.validate().settings.ignore = ":disabled";
-            return form.valid();
+            // console.log('onFinishing');
+            // form.validate().settings.ignore = ":disabled";
+            // return form.valid();
         },
         onFinished: function(event, currentIndex) {
-            alert("Submitted!");
+            // console.log('onFinished');
+            // alert("Submitted!");
         }
     }).validate({
         errorPlacement: function errorPlacement(error, element) {

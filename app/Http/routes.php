@@ -40,6 +40,7 @@ Route::group(['middleware'=>'auth'], function(){
 		Route::get('/' , 'MerchantController@index');
 		
 		Route::get('initialize-card' , 'InitializeCardController@index');
+		Route::post('create-merchant' , 'InitializeCardController@store');
 
 		Route::get('send-messages' , 'MessagesController@index');
 

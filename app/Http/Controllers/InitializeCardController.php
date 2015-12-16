@@ -8,6 +8,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Route;
 use View;
+use App\Merchants;
+use Auth;
+use Response;
 
 class InitializeCardController extends Controller
 {
@@ -31,8 +34,12 @@ class InitializeCardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('merchant.initialize-card');
+    {   
+        $user_id = Auth::user()->id;
+        $autoFieldMerchant = Merchants::where('users_id' , $user_id)->get()->first();
+        return view('merchant.initialize-card' , array(
+                'infoMerchants' => $autoFieldMerchant
+            ));
     }
 
     /**
@@ -53,7 +60,46 @@ class InitializeCardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth::user()->id;
+        $dataCreateCard = $request->all();
+        $checkCreateCardByUser = Merchants::where('users_id', $user_id)->get()->first();
+        if ($checkCreateCardByUser == null) {
+            $result = Merchants::storeMerchant($dataCreateCard);
+                if ($result == true ) {
+                    return Response::json([
+                        'success'   => true,
+                        'priority'  => 'success',
+                        'messages'  => 'Tạo Merchants thành công'
+                    ]);
+                } else {
+                    return Response::json([
+                        'success'   => false,
+                        'priority'  => 'warning',
+                        'messages'  => 'Tạo merchants thất bại'
+                    ]);
+                }
+        } else {
+            $updateMerchant = Merchants::where('users_id' , $user_id)->update(array(
+                'name' => $request->trademark
+            ));
+
+            if ($updateMerchant != null) {
+                return Response::json([
+                    'success'   => true,
+                    'priority'  => 'success',
+                    'messages'  => 'Cập nhật Merchants thành công'
+                ]);
+            } else {
+                return Response::json([
+                    'success'   => false,
+                    'priority'  => 'warning',
+                    'messages'  => 'Cập nhật Merchants thất bại'
+                ]);
+            }
+            
+        }
+
+        
     }
 
     /**
